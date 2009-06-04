@@ -132,7 +132,7 @@ namespace Feedback
             t["#"] = Prefix;
             t["url"] = request.Path;
             t["res"] = "/Feedback.js";
-            string result = t.Parse(this);//, TOption.DelBlanks, TOption.Compact);
+            string result = t.Parse(this, TOption.DelBlanks, TOption.Compact);
 
             application.Context.Response.Write(result);
         }

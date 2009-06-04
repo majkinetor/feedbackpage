@@ -8,8 +8,8 @@
     <ProjectGuid>{A9CCC061-5B51-4B95-B275-AA66B048ABF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FeedbackModule</RootNamespace>
-    <AssemblyName>FeedbackModule</AssemblyName>
+    <RootNamespace>Feedback</RootNamespace>
+    <AssemblyName>Feedback</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
