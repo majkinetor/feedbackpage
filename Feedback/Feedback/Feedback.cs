@@ -61,9 +61,9 @@ namespace Feedback
             
             <div id='[#]body' style='display: none'>
 
-                <div id='[#]caption'><div id='[#]title'>[FeedbackTitle]</div><div id='[#]icons'><a href='javascript:Feedback.toggle()'>_</a><a href='javascript:Feedback.hide()'>x</a></div></div>
+                <div id='[#]caption'><div id='[#]title'>[Title]</div><div id='[#]icons'><a href='javascript:Feedback.toggle()'>_</a><a href='javascript:Feedback.hide()'>x</a></div></div>
                 
-                <div id='[#]header' style='display: none'>[FeedbackHeader]</div>
+                <div id='[#]header' style='display: none'>[Header]</div>
 
                 <div id='[#]content' style='display: none'>
                     <form enctype='multipart/form-data' action='[url]' method='post' id='[#]form' onsubmit=""return AIM.submit(this, { 'onComplete' : Feedback.finish } )"">
@@ -75,18 +75,18 @@ namespace Feedback
             </div>
             <script type='text/javascript' src='[res]'></script>
             <script>
-                    Feedback.init('[#]', '[FeedbackDockType]');                                                
+                    Feedback.init('[#]', '[DockType]');                                                
             </script>
     ";
         #endregion HTML
 
         #region Public Properties
 
-        public string FeedbackDockType  = config.dock;
-        public string FeedbackTitle     = config.title;
-        public string FeedbackHeader    = config.header;
-        public string FeedbackPrefix    = config.prefix;
-        public bool   FeedbackEnabled   = config.enabled;
+        public string DockType  = config.dock;
+        public string Title     = config.title;
+        public string Header    = config.header;
+        public string Prefix    = config.prefix;
+        public bool   Enabled   = config.enabled;
         
         #endregion properties
 
@@ -96,11 +96,11 @@ namespace Feedback
             
             Input i = new Input
             {
-                Description = request.Form[FeedbackPrefix + "text"],
-                Attachment = request.Files[FeedbackPrefix + "file"],
+                Description = request.Form[Prefix + "text"],
+                Attachment = request.Files[Prefix + "file"],
                 Time = DateTime.Now,
 
-                //                  Request = context.Handler is IRequiresSessionState ? context.Session[FeedbackPrefix + "Request"] as HttpRequest : null,
+                //                  Request = context.Handler is IRequiresSessionState ? context.Session[Prefix + "Request"] as HttpRequest : null,
                 Browser = request.Browser,
                 Path = request.Path,
                 ApplicationPath = request.ApplicationPath,
@@ -117,19 +117,19 @@ namespace Feedback
             if (IsPostBack()) return;
             string ext = VirtualPathUtility.GetExtension(request.FilePath).ToLower();
 
-            if (!FeedbackEnabled || IsExcluded(request.Url.ToString()) || !IsValidExtension(ext)) return;
+            if (!Enabled || IsExcluded(request.Url.ToString()) || !IsValidExtension(ext)) return;
             
             //if (context.Handler is IRequiresSessionState)
-            //    context.Session[FeedbackPrefix + "Request"] = request;
+            //    context.Session[Prefix + "Request"] = request;
 
             Create();
         }
         internal void Create()
         {
-            if (String.IsNullOrEmpty(FeedbackTitle)) FeedbackTitle = request.ApplicationPath.Substring(1);
+            if (String.IsNullOrEmpty(Title)) Title = request.ApplicationPath.Substring(1);
 
             Template t = new Template { Delimiters = "[ ]" };
-            t["#"] = FeedbackPrefix;
+            t["#"] = Prefix;
             t["url"] = request.Path;
             t["res"] = "/Feedback.js";
             string result = t.Parse(this);//, TOption.DelBlanks, TOption.Compact);
@@ -143,7 +143,7 @@ namespace Feedback
 
         internal bool IsPostBack()
         {
-            return !String.IsNullOrEmpty(request.Form[FeedbackPrefix + "text"]);
+            return !String.IsNullOrEmpty(request.Form[Prefix + "text"]);
         }
         internal bool IsExcluded(string url)
         {

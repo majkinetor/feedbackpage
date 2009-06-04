@@ -15,9 +15,11 @@ namespace WebApplication1
 {
     public partial class _Default : Feedback.FeedbackPage
     {
+        static Random r = new Random();
         protected void Page_Load(object sender, EventArgs e)
-        {
-
+        {            
+            this.Feedback.Title = "Dyn Title " + r.Next(100).ToString();
+            this.Feedback.Header = "Dyn Header " + r.Next(100).ToString() ;
         }
     }
 }

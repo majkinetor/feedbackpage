@@ -1,5 +1,0 @@
-D:\FeedbackPageModule\Feedback\bin\Debug\FeedbackModule.dll
-D:\FeedbackPageModule\Feedback\bin\Debug\FeedbackModule.pdb
-D:\FeedbackPageModule\Feedback\obj\Debug\ResolveAssemblyReference.cache
-D:\FeedbackPageModule\Feedback\obj\Debug\FeedbackModule.dll
-D:\FeedbackPageModule\Feedback\obj\Debug\FeedbackModule.pdb
