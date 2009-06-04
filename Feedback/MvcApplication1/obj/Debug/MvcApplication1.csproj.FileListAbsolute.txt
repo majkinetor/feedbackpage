@@ -1,0 +1,7 @@
+D:\FeedbackPageModule\MvcApplication1\bin\MvcApplication1.dll
+D:\FeedbackPageModule\MvcApplication1\bin\MvcApplication1.pdb
+D:\FeedbackPageModule\MvcApplication1\obj\Debug\ResolveAssemblyReference.cache
+D:\FeedbackPageModule\MvcApplication1\obj\Debug\MvcApplication1.dll
+D:\FeedbackPageModule\MvcApplication1\obj\Debug\MvcApplication1.pdb
+D:\FeedbackPageModule\MvcApplication1\bin\FeedbackModule.dll
+D:\FeedbackPageModule\MvcApplication1\bin\FeedbackModule.pdb

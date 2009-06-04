@@ -1,0 +1,5 @@
+D:\FeedbackPageModule\FeedbackModule\FeedbackModule\bin\Debug\FeedbackModule.dll
+D:\FeedbackPageModule\FeedbackModule\FeedbackModule\bin\Debug\FeedbackModule.pdb
+D:\FeedbackPageModule\FeedbackModule\FeedbackModule\obj\Debug\ResolveAssemblyReference.cache
+D:\FeedbackPageModule\FeedbackModule\FeedbackModule\obj\Debug\FeedbackModule.dll
+D:\FeedbackPageModule\FeedbackModule\FeedbackModule\obj\Debug\FeedbackModule.pdb
