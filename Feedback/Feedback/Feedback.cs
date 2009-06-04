@@ -116,7 +116,7 @@ namespace Feedback
         {
             if (IsPostBack()) return;
             string ext = VirtualPathUtility.GetExtension(request.FilePath).ToLower();
-
+            WriteScriptResourceToFile(request.PhysicalApplicationPath);
             if (!Enabled || IsExcluded(request.Url.ToString()) || !IsValidExtension(ext)) return;
             
             //if (context.Handler is IRequiresSessionState)
