@@ -20,19 +20,20 @@
         },
         
         toggle : function() {
-            var bVisible = this.content.style.display != 'none';
+            var bVisible = this.content.style.display != 'none';         
             
             this.content.style.display = bVisible ? 'none' : '';
             this.header.style.display = bVisible ? 'none' : '';  
             
             if (!bVisible) this.text.focus();          
-            this.resize(true);
+            this.resize();
         },
         
         hide : function () { this.body.style.display = 'none'; },         
         show : function () { this.body.style.display = '';}, 
         
         dock : function(location) {
+
             switch(location.substring(0,1)) {
 			    case 'L':  this.body.style.left = 0; break;
 			    case 'M':  this.body.style.left = Math.floor((this.windowWidth - this.body.offsetWidth)/2) + 'px'; break;
@@ -54,11 +55,11 @@
             Drag.init(this.caption, this.body, 0, this.windowWidth - this.body.offsetWidth, 0, this.windowHeight - this.body.offsetHeight);
 		},
 		
-		resize: function(bInternal) {
+		resize: function() {
 		    Feedback.setdim();	
 		    var t=Feedback;	    
 		    Drag.init(t.caption, t.body, 0, t.windowWidth - t.body.offsetWidth, 0, t.windowHeight - t.body.offsetHeight);
-		    if (!bInternal) t.dock(t.dockpos);
+		    t.dock(t.dockpos);
 		},	
 		           
         finish: function(response) {
