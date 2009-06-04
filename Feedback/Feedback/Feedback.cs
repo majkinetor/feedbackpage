@@ -131,7 +131,7 @@ namespace Feedback
             Template t = new Template { Delimiters = "[ ]" };
             t["#"] = Prefix;
             t["url"] = request.Path;
-            t["res"] = "/Feedback.js";
+            t["res"] = request.ApplicationPath + (request.ApplicationPath.EndsWith("/") ? String.Empty : "/") + "Feedback.js";
             string result = t.Parse(this, TOption.DelBlanks, TOption.Compact);
 
             application.Context.Response.Write(result);
