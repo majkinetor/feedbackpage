@@ -21,7 +21,7 @@
         
         toggle : function() {
             var bVisible = this.content.style.display != 'none';
-                        
+            
             this.content.style.display = bVisible ? 'none' : '';
             this.header.style.display = bVisible ? 'none' : '';  
             
@@ -33,13 +33,16 @@
         show : function () { this.body.style.display = '';}, 
         
         dock : function(location) {
-		    switch(location) {
-			    case 'top':      this.body.style.top = 0;  break;
-			    case 'bottom':   this.body.style.top = (this.windowHeight - this.body.offsetHeight) + 'px'; break;
-			    case 'left':     this.body.style.left = 0; break;
-			    case 'right':    this.body.style.left = (this.windowWidth - this.body.offsetWidth) + 'px'; break;
-			    default:  break;
+            switch(location.substring(0,1)) {
+			    case 'L':  this.body.style.left = 0; break;
+			    case 'M':  this.body.style.left = Math.floor((this.windowWidth - this.body.offsetWidth)/2) + 'px'; break;
+			    case 'R':  this.body.style.left = (this.windowWidth - this.body.offsetWidth) + 'px'; break;
 		    }
+		    switch(location.substring(1)) {
+			    case 'T':  this.body.style.top = 0; break;
+			    case 'M':  this.body.style.top = Math.floor((this.windowHeight - this.body.offsetHeight)/2) + 'px'; break;
+			    case 'B':  this.body.style.top = (this.windowHeight - this.body.offsetHeight) + 'px'; break;
+		    }				
 		}, 
 		
 		setdim : function() {

@@ -177,7 +177,7 @@ namespace Feedback
 
         public string title     = String.Empty;
         public string header    = String.Empty;
-        public string dock      = "right";
+        public string dock      = "RT";
         public bool   enabled   = true;
         public string width     = "300px";
         public string prefix    = Namespace + "_";
