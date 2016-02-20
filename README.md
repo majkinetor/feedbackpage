@@ -20,11 +20,13 @@ Features
 Usage
 -----
 
-Reference the assembly in your web.application. You have 2 options: * Use FeedbackModule that implements IHttpModule interface to inject the panel into the HTML page. This method can be used with any type of web applicaton without changing the source code. To use the module register it in web.config in `<system.web>\<httpModules>` section:
+Reference the assembly in your web.application. You have 2 options: 
+
+- Use FeedbackModule that implements IHttpModule interface to inject the panel into the HTML page. This method can be used with any type of web applicaton without changing the source code. To use the module register it in web.config in `<system.web>\<httpModules>` section:
 
     <add name="FeedbackModule" type="Feedback.FeedbackModule, Feedback, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0b70fe138b18831f"/> 
 
-Use FeedbackPage as a base class for your web form instead of the System.Web.UI.Page class. This method allows you to programatically set up FeedbackPanel using this.Feedback property.
+- Use FeedbackPage as a base class for your web form instead of the System.Web.UI.Page class. This method allows you to programatically set up FeedbackPanel using this.Feedback property.
 
 Configuration
 -------------
